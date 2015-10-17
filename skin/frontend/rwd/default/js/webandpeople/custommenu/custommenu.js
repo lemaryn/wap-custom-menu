@@ -38,7 +38,7 @@ function wpShowMenuPopup(objMenu, event, popupId)
             if (CUSTOMMENU_POPUP_WIDTH>0){
                 popup.style.width = CUSTOMMENU_POPUP_WIDTH + 'px';
 			}else{
-                popup.style.width = '100%';
+                //popup.style.width = '100%';
                 popup.style.left = '0';
 				
 			}

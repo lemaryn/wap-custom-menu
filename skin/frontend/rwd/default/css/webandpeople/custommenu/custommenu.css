@@ -11,12 +11,12 @@
 *:first-child+html #custommenu {
     z-index: 998;
 }
-div.menu {
+li.menu {
     float: left;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
-div.menu a:link, div.menu a:visited {
+li.menu a:link, li.menu a:visited {
     display: block;
     height: 40px;
     padding-left: 15px;
@@ -24,13 +24,13 @@ div.menu a:link, div.menu a:visited {
      padding-top: 0;
      padding-bottom: 0;
 }
-div.menu a span {
+li.menu a span {
     display: block;
     height: 28px;
     padding-right: 0px;
-    padding-top: 12px;
+    padding-top: 8px;
 }
-div.menu a span:hover {
+li.menu a span:hover {
     cursor: pointer;
 }
 div.wp-custom-menu-popup {
@@ -43,13 +43,11 @@ div.wp-custom-menu-popup {
     width: 100%;
     margin-top: -1px;
 }
-div.menu a, div.wp-custom-menu-popup a {
+li.menu a, div.wp-custom-menu-popup a {
     text-decoration: none;
     display:block;
     cursor: pointer;
-    _height: 0;
     height: auto;
-    line-height:13px;
 }
 div.level1 {
     margin-bottom: 5px;
@@ -145,29 +143,25 @@ div.wp-custom-menu-popup {
     background-color: #fbfbfb;
     border: solid 1px #cccccc;
 }
-div.menu a:link, div.menu a:visited {
+li.menu a:link, li.menu a:visited {
 }
-div.menu a:hover {
+li.menu a:hover {
     background: #f1f1f1;
 }
-div.menu a, div.wp-custom-menu-popup a {
+li.menu a, div.wp-custom-menu-popup a {
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     -ms-transition: all .1s linear;
     transition: all .1s linear;
 }
-div.menu .brand a, div.wp-custom-menu-popup .brand a {
+li.menu .brand a, div.wp-custom-menu-popup .brand a {
     -webkit-transition: all 0s linear;
     -moz-transition: all 0s linear;
     -ms-transition: all 0s linear;
     transition: all 0s linear;
 }
 /*FONTS*/
-div.menu {
-    font-weight: normal;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
+li.menu {
     line-height: 0;
 }
 a.level1:link, a.level1:visited {
@@ -182,12 +176,9 @@ a.level2:link, a.level2:visited {
 }
 /*COLOR*/
 #custommenu {
-    background-color: #fff;
 }
-div.menu a:link, div.menu a:visited {
-    background-color: #fff;
-    color: #636363;
-    text-transform: uppercase;
+li.menu a:link, li.menu a:visited {
+
 }
 a.level1:link, a.level1:visited {
     color: #636363;
@@ -195,10 +186,9 @@ a.level1:link, a.level1:visited {
 a.level2:link, a.level2:visited {
     color: #636363;
 }
-div.menu a:hover,
-div.menu.act a,
-div.menu.active a {
-    color: #3399cc;
+li.menu a:hover,
+li.menu.act a,
+li.menu.active a {
 }
 a.level1:hover, a.level1.act, a.level1.actParent {
     color: #3399cc;
@@ -286,7 +276,7 @@ html[xmlns] #menu-button, html[xmlns] .parentMenu {
     display: block;
     text-align: left;
 }
-.menu-mobile div.menu-button, .menu-mobile div.menu-mobile {
+.menu-mobile li.menu-button, .menu-mobile li.menu-mobile {
     float: none;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
@@ -430,15 +420,13 @@ ul#custommenu li{
 }
 
 ul#custommenu li a{
-    background-color: #ffffff;
-    color: #636363;
-    text-transform: uppercase;
-	padding:10px 15px;
+	padding:10px 0px;
 	display:block;
 }
 
 ul#custommenu li a:hover, ul#custommenu li a.act{
-	color: #3399cc;
+    background-color: #ffffff;
+    color: #666;
 	text-decoration:none
 }
 
@@ -580,3 +568,4 @@ ul#custommenu li ul li .itemSubMenu a{
     padding: 5px 0 5px 60px;
 	color: #636363;
 }
+

@@ -104,9 +104,9 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
             }
             // --- draw Custom User Block ---
             if ($blockHtml) {
-                $htmlPopup[] = '<li id="' . $blockId . '" class="block2">';            
+                $htmlPopup[] = '<li id="' . $blockId . '" class="block2">';
                 $htmlTop[] = $blockHtml;
-                $htmlPopup[] = '</li>';            
+                $htmlPopup[] = '</li>';
             }
             $htmlTop[] = '</ul>';
             $this->_popupMenu[] = implode("\n", $htmlTop);
@@ -154,6 +154,7 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
 
     public function drawMenuItem($children, $level = 1)
     {
+        $html = '';
         $keyCurrent = $this->getCurrentCategory()->getId();
         foreach ($children as $child) {
             if (is_object($child) && $child->getIsActive()) {
