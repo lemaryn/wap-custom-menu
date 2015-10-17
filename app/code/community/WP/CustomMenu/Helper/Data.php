@@ -70,13 +70,11 @@ class WP_CustomMenu_Helper_Data extends Mage_Core_Helper_Abstract
         $homeLink           = '';
         if ($_showHomeLink) {
             $homeLink = <<<HTML
-<div id="menu-mobile-0" class="menu-mobile level0">
-    <div class="parentMenu">
+<li id="menu-mobile-0" class="menu-mobile level0">
         <a href="$homeLinkUrl">
-            <span>$homeLinkText</span>
+            $homeLinkText
         </a>
-    </div>
-</div>
+</li>
 HTML;
         }
         // --- Menu Content ---
@@ -107,13 +105,11 @@ HTML;
         $homeLink           = '';
         if ($_showHomeLink) {
             $homeLink = <<<HTML
-<div class="menu">
-    <div class="parentMenu menu0">
+<li class="menu er">
         <a href="$homeLinkUrl">
-            <span>$homeLinkText</span>
+            $homeLinkText
         </a>
-    </div>
-</div>
+</li>
 HTML;
     }
         // --- Menu Content ---
