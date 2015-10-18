@@ -58,7 +58,7 @@ function wpShowMenuPopup(objMenu, event, popupId)
             }
             // --- change href ---
             var wpMenuAnchor = $(objMenu.select('a')[0]);
-            wpChangeTopMenuHref(wpMenuAnchor, true);
+            //wpChangeTopMenuHref(wpMenuAnchor, true);
             // --- show popup ---
             if (typeof jQuery == 'undefined') {
                 popup.style.display = 'block';
@@ -82,7 +82,7 @@ function wpHideMenuPopup(element, event, popupId, menuId)
                         objMenu.removeClassName('active');
                         // --- change href ---
                         var wpMenuAnchor = $(objMenu.select('a')[0]);
-                        wpChangeTopMenuHref(wpMenuAnchor, false);
+                        //wpChangeTopMenuHref(wpMenuAnchor, false);
                         // --- hide popup ---
                         if (typeof jQuery == 'undefined') {
                             popup.style.display = 'none';

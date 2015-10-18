@@ -21,8 +21,8 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
         $catUrl = $this->getCategoryUrl($category);
         $html[] = '<li id="menu-mobile-' . $id . '" class="menu-mobile level0' . $active . '">';
         // --- Top Menu Item ---
-        $html[] = '<a class="level' . $level . $active . '" href="' . $catUrl .'">';
         $name = $this->escapeHtml($category->getName());
+        $html[] = '<a class="level' . $level . $active . '" href="' . $catUrl .'" title="' . $name . '">';
         if (Mage::getStoreConfig('custom_menu/general/non_breaking_space')) {
             $name = str_replace(' ', '&nbsp;', $name);
         }
@@ -80,9 +80,9 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
         }
         // --- Top Menu Item ---
         if ($level == 0 && $drawPopup) {
-            $htmlTop[] = '<a  class="level' . $level . $active . '" href="'.$this->getCategoryUrl($category).'" rel="'.$this->getCategoryUrl($category).'">';
+            $htmlTop[] = '<a  class="level' . $level . $active . '" href="'.$this->getCategoryUrl($category).'" title="'.$this->escapeHtml($category->getName()).'">';
         } else {
-            $htmlTop[] = '<a  class="level' . $level . $active . '" href="'.$this->getCategoryUrl($category).'">';
+            $htmlTop[] = '<a  class="level' . $level . $active . '" href="'.$this->getCategoryUrl($category).'" title="'.$this->escapeHtml($category->getName()).'">';
         }
         $name = $this->escapeHtml($category->getName());
         if (Mage::getStoreConfig('custom_menu/general/non_breaking_space')) {
@@ -136,7 +136,7 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
                 // --- format category name ---
                 $name = $this->escapeHtml($child->getName());
                 if (Mage::getStoreConfig('custom_menu/general/non_breaking_space')) $name = str_replace(' ', '&nbsp;', $name);
-                $html.= '<a class="itemMenuName level' . $level . $active . '" href="' . $this->getCategoryUrl($child) . '"><span>' . $name . '</span></a>';
+                $html.= '<a class="itemMenuName level' . $level . $active . '" href="' . $this->getCategoryUrl($child) . '" title="' . $name . '"><span>' . $name . '</span></a>';
                 if (count($activeChildren) > 0) {
                     $html.= '<span class="button" rel="submenu-mobile-' . $id . '" onclick="wpSubMenuToggle(this, \'menu-mobile-' . $id . '\', \'submenu-mobile-' . $id . '\');">&nbsp;</span>';
                 }
@@ -168,7 +168,7 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
                 $name = $this->escapeHtml($child->getName());
                 if (Mage::getStoreConfig('custom_menu/general/non_breaking_space')) $name = str_replace(' ', '&nbsp;', $name);
 			     $html.="<li id='menu".$child->getId()."' >"; 
-                $html.= '<a class="itemMenuName level' . $level . $active . '" href="' . $this->getCategoryUrl($child) . '">' . $name . '</a>';
+                $html.= '<a class="itemMenuName level' . $level . $active . '" href="' . $this->getCategoryUrl($child) . '" title="' . $name . '">' . $name . '</a>';
 				
                 $activeChildren = $this->_getActiveChildren($child, $level);
                 if (count($activeChildren) > 0) {
