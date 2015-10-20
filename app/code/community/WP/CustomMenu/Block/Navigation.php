@@ -370,4 +370,23 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
         }
         return $partition;
     }
+
+    /**
+     * Get url for category data
+     *
+     * @param Mage_Catalog_Model_Category $category
+     * @return string
+     */
+    public function getCategoryUrl($category)
+    {
+        //Set URL to external one
+        $externalUrl = $category['external_url'];
+        if ($externalUrl) {
+            return $externalUrl[0] === '/'
+                ? Mage::app()->getStore()->getBaseUrl() . substr($externalUrl, 1)
+                : $externalUrl;
+
+        return parent::getCategoryUrl($category);
+      }
+    }
 }
